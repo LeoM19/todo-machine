@@ -1,0 +1,115 @@
+:root {
+    --color-white: #ffffff;
+    --color-light-gray: #676f9d;
+    --color-middle-gray: #424769;
+    --color-background-gray: #2d3250;
+    --color-orange: #f9b17a;
+}
+* {
+    margin: 0;
+    padding: 0;
+    font-weight: 100;
+}
+body {
+    background-color: var(--color-background-gray);
+    color: var(--color-white);
+    font-family: Arial, Helvetica, sans-serif;
+}
+.main-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.title {
+    text-align: center;
+    font-size: 48px;
+    padding: 32px;
+}
+.title .title-todos {
+    color: var(--color-orange);
+}
+.title .title-todos-text {
+    font-weight: 800;
+}
+.todos-count-title {
+    text-align: center;
+    font-size: 32px;
+    margin-bottom: 32px;
+}
+.todos-count-title .todos-count-text {
+    font-weight: 800;
+    color: var(--color-orange);
+    font-size: 36px;
+}
+.todos-search {
+    border: none;
+    padding: 20px;
+    background: var(--color-middle-gray);
+    color:var(--color-white);
+    width: 300px;
+    margin-bottom: 40px;
+    font-size: 18px;
+}
+.todos-search::placeholder {
+    color: var(--color-light-gray);
+
+}
+.todos-search:focus {
+    border: 2px solid var(--color-light-gray);
+    outline-color: var(--color-light-gray);
+}
+.todos-list {
+    list-style: none;
+    width: 400px;
+}
+.todos-list li {
+    position: relative;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    place-items: center;
+    margin-bottom: 20px;
+    /* height: 50px; */
+    padding: 25px 20px;
+    background-color: var(--color-light-gray);
+    font-size: 16px;
+}
+.todos-list li:last-child {
+    margin-bottom: 32px;
+}
+.todos-list li span {
+    font-size: 32px;
+    font-weight: 600;
+    cursor: pointer;
+}
+.todos-list li span:first-child {
+    margin-right: 20px;
+}
+.icon-check--completed {
+    color: var(--color-orange);
+}
+.todos-list p {
+    justify-self: left;
+}
+.todo-text--completed {
+    text-decoration: line-through;
+}
+.todos-list li span:last-child {
+    position: absolute;
+    top: -15px;
+    right: 15px;
+}
+.create-todo-button {
+    width: 250px;
+    height: 50px;
+    background: var(--color-orange);
+    border: none;
+    color: var(--color-white);
+    font-size: 24px;
+    font-weight: 700;
+    cursor: pointer;
+    margin-bottom: 48px;
+}
+.create-todo-button:hover {
+    box-shadow: 0 0 5px 1px var(--color-orange);
+}
+
