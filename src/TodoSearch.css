@@ -1,0 +1,17 @@
+.todos-search {
+    border: none;
+    padding: 20px;
+    background: var(--color-middle-gray);
+    color:var(--color-white);
+    width: 300px;
+    margin-bottom: 40px;
+    font-size: 18px;
+}
+.todos-search::placeholder {
+    color: var(--color-light-gray);
+
+}
+.todos-search:focus {
+    border: 2px solid var(--color-light-gray);
+    outline-color: var(--color-light-gray);
+}

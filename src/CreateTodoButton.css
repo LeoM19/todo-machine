@@ -1,0 +1,14 @@
+.create-todo-button {
+    width: 250px;
+    height: 50px;
+    background: var(--color-orange);
+    border: none;
+    color: var(--color-white);
+    font-size: 24px;
+    font-weight: 700;
+    cursor: pointer;
+    margin-bottom: 48px;
+}
+.create-todo-button:hover {
+    box-shadow: 0 0 5px 1px var(--color-orange);
+}

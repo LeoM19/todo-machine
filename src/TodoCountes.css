@@ -1,0 +1,10 @@
+.todos-count-title {
+    text-align: center;
+    font-size: 32px;
+    margin-bottom: 32px;
+}
+.todos-count-title .todos-count-text {
+    font-weight: 800;
+    color: var(--color-orange);
+    font-size: 36px;
+}

@@ -1,0 +1,11 @@
+.title {
+    text-align: center;
+    font-size: 48px;
+    padding: 32px;
+}
+.title .title-todos {
+    color: var(--color-orange);
+}
+.title .title-todos-text {
+    font-weight: 800;
+}
