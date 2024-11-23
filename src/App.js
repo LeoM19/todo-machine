@@ -7,17 +7,43 @@ import { TodoSearch } from './TodoSearch';
 import { TodoTitle } from './TodoTitle';
 
 
-const defaultTodos = [
-  { text: 'Cortar cebolla', completed: false },
-  { text: 'Barrer cocina', completed: false },
-  { text: 'Lavar trastes', completed: false },
-  { text: 'Lavar ropa', completed: false },
-  { text: 'limpiar ropa', completed: false },
-];
+// const defaultTodos = [
+//   { text: 'Cortar cebolla', completed: false },
+//   { text: 'Barrer cocina', completed: false },
+//   { text: 'Lavar trastes', completed: false },
+//   { text: 'Lavar ropa', completed: false },
+//   { text: 'limpiar ropa', completed: false },
+// ];
+
+// localStorage.setItem('TODOS_V1', JSON.stringify(defaultTodos));
+// localStorage.removeItem('TODOS_V1');
+
+function useLocarStorage(itemName, initialValue) {
+  let localStorageItem = localStorage.getItem(itemName);
+
+  let parsetItem;
+
+  if(!localStorageItem) {
+    localStorage.setItem(itemName, JSON.stringify(initialValue));
+    parsetItem = initialValue;
+  } else {
+    parsetItem = JSON.parse(localStorageItem);
+  }
+
+  const [item, setItem] = React.useState(parsetItem);
+
+  const saveItem = (newItem) => {
+    localStorage.setItem('TODOS_V1', JSON.stringify(newItem));
+
+    setItem(newItem);
+  };
+
+  return [item, saveItem];
+}
 
 function App() {
+  const [todos, saveTodos] = useLocarStorage('TODOS_V1', []);
   const [searchValue, setSearchValue] = React.useState('');
-  const [todos, setTodos] = React.useState(defaultTodos);
 
   const completedTodos = todos.filter(todo => !!todo.completed).length;
   const totalTodos = todos.length;
@@ -37,7 +63,7 @@ function App() {
       (todo) => todo.text === text 
     );
     newTodos[todoIndex].completed = true;
-    setTodos(newTodos);
+    saveTodos(newTodos);
   }
 
   const deleteTodo = (text) => {
@@ -46,7 +72,7 @@ function App() {
       (todo) => todo.text === text 
     );
     newTodos.splice(todoIndex, 1);
-    setTodos(newTodos);
+    saveTodos(newTodos);
   }
 
   return (
