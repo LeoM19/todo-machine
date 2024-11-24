@@ -1,5 +1,5 @@
-import { CompleteIcon } from "./CompletedIcon";
-import { DeleteIcon } from "./DeleteIcon";
+import { CompleteIcon } from "../TodoIcon/CompletedIcon";
+import { DeleteIcon } from "../TodoIcon/DeleteIcon";
 
 import './TodoItem.css'
 
