@@ -1,18 +1,35 @@
 import React from "react";
 
 function useLocarStorage(itemName, initialValue) {
-    let localStorageItem = localStorage.getItem(itemName);
+  const [item, setItem] = React.useState(initialValue);
+  const [loading, setLoading] = React.useState(true);
+  const [error, setError] = React.useState(false);
   
-    let parsetItem;
+  React.useEffect(() => {
+      setTimeout(() => {
+        try {
+          const localStorageItem = localStorage.getItem(itemName);
+      
+          let parsetItem;
   
-    if(!localStorageItem) {
-      localStorage.setItem(itemName, JSON.stringify(initialValue));
-      parsetItem = initialValue;
-    } else {
-      parsetItem = JSON.parse(localStorageItem);
-    }
+          if(!localStorageItem) {
+            localStorage.setItem(itemName, JSON.stringify(initialValue));
+            parsetItem = initialValue;
+          } else {
+            parsetItem = JSON.parse(localStorageItem);
+            setItem(parsetItem);
+          }
   
-    const [item, setItem] = React.useState(parsetItem);
+          setLoading(false);
+        } catch(error) {
+          setLoading(false);
+          setError(true);
+        }
+      }, 2000);
+    }, []);
+
+    
+  
   
     const saveItem = (newItem) => {
       localStorage.setItem('TODOS_V1', JSON.stringify(newItem));
@@ -20,7 +37,12 @@ function useLocarStorage(itemName, initialValue) {
       setItem(newItem);
     };
   
-    return [item, saveItem];
+    return {
+      item, 
+      saveItem, 
+      loading, 
+      error,
+    };
   }
 
   export { useLocarStorage };

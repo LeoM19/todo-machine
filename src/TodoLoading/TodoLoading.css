@@ -1,0 +1,29 @@
+.loading-container {
+    width: 400px;
+    margin-bottom: 20px;
+}
+
+.loading-item {
+    display: grid;
+    grid-template-columns: auto;
+    place-items: center;
+    margin-bottom: 20px;
+    height: 84px;
+
+    background: linear-gradient(90deg, var(--color-light-gray), var(--color-background-gray));
+    background-size: 400% 400%;
+    animation: loadingAnimation 2s ease-in-out infinite;
+
+}
+
+@keyframes loadingAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
