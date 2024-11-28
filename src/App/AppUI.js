@@ -52,7 +52,7 @@ function AppUI() {
 
                 {openModal && (
                     <Modal>
-                        <FormCreateTodo setOpenModal={setOpenModal}/>
+                        <FormCreateTodo />
                     </Modal>
                 )}
             </div>
