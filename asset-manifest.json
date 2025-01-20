@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/LeoM19/todo-machine/static/css/main.a6133128.css",
+    "main.js": "/LeoM19/todo-machine/static/js/main.ff7125f5.js",
+    "index.html": "/LeoM19/todo-machine/index.html",
+    "main.a6133128.css.map": "/LeoM19/todo-machine/static/css/main.a6133128.css.map",
+    "main.ff7125f5.js.map": "/LeoM19/todo-machine/static/js/main.ff7125f5.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.a6133128.css",
+    "static/js/main.ff7125f5.js"
+  ]
+}
